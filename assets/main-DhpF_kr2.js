@@ -6374,42 +6374,98 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$3 = {
-  name: "App"
+const _sfc_main$4 = {
+  name: "Nav-bar"
 };
-const _hoisted_1$2 = { id: "app" };
-function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$4 = { class: "navbar navbar-expand-lg navbar-light bg-light" };
+const _hoisted_2$2 = { class: "container-fluid" };
+const _hoisted_3$1 = {
+  class: "collapse navbar-collapse",
+  id: "navbarNav"
+};
+const _hoisted_4 = { class: "navbar-nav" };
+const _hoisted_5 = { class: "nav-item" };
+const _hoisted_6 = { class: "nav-item" };
+const _hoisted_7 = { class: "nav-item" };
+function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
-  const _component_router_view = resolveComponent("router-view");
-  return openBlock(), createElementBlock("div", _hoisted_1$2, [
-    createBaseVNode("nav", null, [
-      createBaseVNode("ul", null, [
-        createBaseVNode("li", null, [
-          createVNode(_component_router_link, { to: "/scanner" }, {
-            default: withCtx(() => _cache[0] || (_cache[0] = [
-              createTextVNode("Barcode Scanner")
-            ])),
-            _: 1
-          })
-        ]),
-        createBaseVNode("li", null, [
-          createVNode(_component_router_link, { to: "/generate" }, {
-            default: withCtx(() => _cache[1] || (_cache[1] = [
-              createTextVNode("Generate QR Code")
-            ])),
-            _: 1
-          })
-        ]),
-        createBaseVNode("li", null, [
-          createVNode(_component_router_link, { to: "/nfc-scan" }, {
-            default: withCtx(() => _cache[2] || (_cache[2] = [
-              createTextVNode("NFC Scan")
-            ])),
-            _: 1
-          })
+  return openBlock(), createElementBlock("nav", _hoisted_1$4, [
+    createBaseVNode("div", _hoisted_2$2, [
+      createVNode(_component_router_link, {
+        class: "navbar-brand",
+        to: "/"
+      }, {
+        default: withCtx(() => _cache[0] || (_cache[0] = [
+          createTextVNode("Vue Barcode Scanner")
+        ])),
+        _: 1
+      }),
+      _cache[4] || (_cache[4] = createBaseVNode("button", {
+        class: "navbar-toggler",
+        type: "button",
+        "data-bs-toggle": "collapse",
+        "data-bs-target": "#navbarNav",
+        "aria-controls": "navbarNav",
+        "aria-expanded": "false",
+        "aria-label": "Toggle navigation"
+      }, [
+        createBaseVNode("span", { class: "navbar-toggler-icon" })
+      ], -1)),
+      createBaseVNode("div", _hoisted_3$1, [
+        createBaseVNode("ul", _hoisted_4, [
+          createBaseVNode("li", _hoisted_5, [
+            createVNode(_component_router_link, {
+              class: "btn",
+              activeClass: "btn btn-secondary",
+              to: "/scanner"
+            }, {
+              default: withCtx(() => _cache[1] || (_cache[1] = [
+                createTextVNode("Scan QR")
+              ])),
+              _: 1
+            })
+          ]),
+          createBaseVNode("li", _hoisted_6, [
+            createVNode(_component_router_link, {
+              class: "btn",
+              activeClass: "btn btn-secondary",
+              to: "/generate"
+            }, {
+              default: withCtx(() => _cache[2] || (_cache[2] = [
+                createTextVNode("Generate QR")
+              ])),
+              _: 1
+            })
+          ]),
+          createBaseVNode("li", _hoisted_7, [
+            createVNode(_component_router_link, {
+              class: "btn",
+              activeClass: "btn btn-secondary",
+              to: "/nfc-scan"
+            }, {
+              default: withCtx(() => _cache[3] || (_cache[3] = [
+                createTextVNode("Scan NFC")
+              ])),
+              _: 1
+            })
+          ])
         ])
       ])
-    ]),
+    ])
+  ]);
+}
+const NavBar = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$2], ["__scopeId", "data-v-1a68558c"]]);
+const _sfc_main$3 = {
+  components: {
+    NavBar
+  }
+};
+const _hoisted_1$3 = { id: "app" };
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_NavBar = resolveComponent("NavBar");
+  const _component_router_view = resolveComponent("router-view");
+  return openBlock(), createElementBlock("div", _hoisted_1$3, [
+    createVNode(_component_NavBar),
     createVNode(_component_router_view)
   ]);
 }
@@ -13925,7 +13981,7 @@ class RealtimeClient {
       }
     });
     __vitePreload(async () => {
-      const { default: WS } = await import("./browser-Dz7RO1_J.js").then((n) => n.b);
+      const { default: WS } = await import("./browser-u8w-QzH6.js").then((n) => n.b);
       return { default: WS };
     }, true ? [] : void 0).then(({ default: WS }) => {
       this.conn = new WS(this._endPointURL(), void 0, {
@@ -18176,8 +18232,9 @@ const insertData = async (table, newData) => {
   }
   return data;
 };
+const _hoisted_1$2 = { class: "mx-3 my-5" };
 const _sfc_main$2 = {
-  __name: "Barcode-Scanner",
+  __name: "QR-Scanner",
   setup(__props) {
     const decodedContent = ref(null);
     async function saveToSupabase(content) {
@@ -18219,7 +18276,7 @@ const _sfc_main$2 = {
       });
     }
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", null, [
+      return openBlock(), createElementBlock("div", _hoisted_1$2, [
         createVNode(unref(Fi), {
           onDetect,
           onDecode,
@@ -18233,7 +18290,7 @@ const _sfc_main$2 = {
     };
   }
 };
-const BarcodeScanner = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-0281c4c4"]]);
+const QRScanner = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-956ffec1"]]);
 const isClient = typeof window !== "undefined" && typeof document !== "undefined";
 typeof WorkerGlobalScope !== "undefined" && globalThis instanceof WorkerGlobalScope;
 const noop = () => {
@@ -20206,7 +20263,8 @@ function useQRCode(text, options) {
   );
   return result;
 }
-const _hoisted_1$1 = ["src"];
+const _hoisted_1$1 = { class: "mx-3 my-5" };
+const _hoisted_2$1 = ["src"];
 const _sfc_main$1 = {
   __name: "Generate-QR-Code",
   setup(__props) {
@@ -20216,14 +20274,8 @@ const _sfc_main$1 = {
       margin: 3
     });
     return (_ctx, _cache) => {
-      const _component_note = resolveComponent("note");
-      return openBlock(), createElementBlock(Fragment, null, [
-        createVNode(_component_note, null, {
-          default: withCtx(() => _cache[1] || (_cache[1] = [
-            createTextVNode(" Text content for QRCode ")
-          ])),
-          _: 1
-        }),
+      return openBlock(), createElementBlock("div", _hoisted_1$1, [
+        _cache[1] || (_cache[1] = createBaseVNode("p", null, "Text content for QRCode", -1)),
         withDirectives(createBaseVNode("input", {
           "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => text.value = $event),
           type: "text"
@@ -20235,8 +20287,8 @@ const _sfc_main$1 = {
           class: "mt-6 mb-2 rounded border",
           src: unref(qrcode2),
           alt: "QR Code"
-        }, null, 8, _hoisted_1$1)) : createCommentVNode("", true)
-      ], 64);
+        }, null, 8, _hoisted_2$1)) : createCommentVNode("", true)
+      ]);
     };
   }
 };
@@ -20244,6 +20296,7 @@ const _sfc_main = {
   setup() {
     const nfcData = ref(null);
     const error = ref(null);
+    const status = ref("Click start scan below");
     const startScan = async () => {
       error.value = null;
       if ("NDEFReader" in window) {
@@ -20283,34 +20336,39 @@ const _sfc_main = {
     return {
       nfcData,
       error,
-      startScan
+      startScan,
+      status
     };
   }
 };
-const _hoisted_1 = { key: 0 };
-const _hoisted_2 = { key: 1 };
+const _hoisted_1 = { class: "mx-3 my-5" };
+const _hoisted_2 = { class: "px-2" };
+const _hoisted_3 = { key: 0 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", null, [
+  return openBlock(), createElementBlock("div", _hoisted_1, [
     _cache[3] || (_cache[3] = createBaseVNode("h1", null, "NFC Scan", -1)),
     createBaseVNode("button", {
       onClick: _cache[0] || (_cache[0] = (...args) => $setup.startScan && $setup.startScan(...args))
     }, "Start NFC Scan"),
-    $setup.nfcData ? (openBlock(), createElementBlock("div", _hoisted_1, [
+    _cache[4] || (_cache[4] = createBaseVNode("hr", null, null, -1)),
+    createBaseVNode("p", _hoisted_2, toDisplayString($setup.status), 1),
+    _cache[5] || (_cache[5] = createBaseVNode("hr", null, null, -1)),
+    createBaseVNode("div", null, [
       _cache[1] || (_cache[1] = createBaseVNode("h2", null, "Scanned NFC Data:", -1)),
       createBaseVNode("pre", null, toDisplayString($setup.nfcData), 1)
-    ])) : createCommentVNode("", true),
-    $setup.error ? (openBlock(), createElementBlock("div", _hoisted_2, [
+    ]),
+    $setup.error ? (openBlock(), createElementBlock("div", _hoisted_3, [
       _cache[2] || (_cache[2] = createBaseVNode("h2", null, "Error:", -1)),
       createBaseVNode("pre", null, toDisplayString($setup.error), 1)
     ])) : createCommentVNode("", true)
   ]);
 }
-const NFCScan = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-04ec4a45"]]);
+const NFCScan = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-ec7d9fd8"]]);
 const routes = [
   {
     path: "/scanner",
     name: "Scanner",
-    component: BarcodeScanner
+    component: QRScanner
   },
   {
     path: "/generate",
@@ -20321,6 +20379,11 @@ const routes = [
     path: "/nfc-scan",
     name: "NFCScan",
     component: NFCScan
+  },
+  {
+    path: "/",
+    name: "Root",
+    redirect: "/scanner"
   }
 ];
 const router = createRouter({
