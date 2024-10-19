@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import BarcodeScanner from "@/components/Barcode-Scanner.vue"; // Adjust the path as necessary
 import GenerateQRCode from "@/components/Generate-QR-Code.vue";
+import NFCScan from "@/components/NFC-Scan.vue";
 
 const routes = [
   {
