@@ -19,10 +19,6 @@ const routes = [
     name: "NFCScan",
     component: NFCScan,
   },
-  {
-    path: "/",
-    redirect: "/scanner",
-  },
 ];
 
 const router = createRouter({
