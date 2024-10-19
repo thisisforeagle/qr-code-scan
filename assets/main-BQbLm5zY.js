@@ -13917,7 +13917,7 @@ class RealtimeClient {
       }
     });
     __vitePreload(async () => {
-      const { default: WS } = await import("./browser-C6UadX8i.js").then((n) => n.b);
+      const { default: WS } = await import("./browser-ozjP0JTP.js").then((n) => n.b);
       return { default: WS };
     }, true ? [] : void 0).then(({ default: WS }) => {
       this.conn = new WS(this._endPointURL(), void 0, {
@@ -18157,7 +18157,7 @@ const createClient = (supabaseUrl, supabaseKey, options) => {
   return new SupabaseClient(supabaseUrl, supabaseKey, options);
 };
 const SUPABASE_URL = "https://xrsrdfsvehmnodmovhcl.supabase.co";
-const SUPABASE_PASSWORD = "9N9fAu6h@Edy#Mm";
+const SUPABASE_PASSWORD = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhyc3JkZnN2ZWhtbm9kbW92aGNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkzNTY5NDYsImV4cCI6MjA0NDkzMjk0Nn0.LFwHRJyG1Qe08r9GBIE9nD90YE5Yai7fzlqiM5y-xpU";
 const supabase = createClient(SUPABASE_URL, SUPABASE_PASSWORD);
 const insertData = async (table, newData) => {
   const { data, error } = await supabase.from(table).insert(newData);
