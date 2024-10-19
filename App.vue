@@ -14,7 +14,7 @@
   };
 </script>
 
-<style>
+<style lang="scss">
   /* Add any global styles you need */
   nav ul {
     list-style-type: none;

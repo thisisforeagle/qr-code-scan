@@ -10,12 +10,14 @@
 </script>
 
 <template>
-  <note> Text content for QRCode </note>
-  <input v-model="text" type="text" />
-  <img
-    v-if="text"
-    class="mt-6 mb-2 rounded border"
-    :src="qrcode"
-    alt="QR Code"
-  />
+  <div class="mx-3 my-5">
+    <p>Text content for QRCode</p>
+    <input v-model="text" type="text" />
+    <img
+      v-if="text"
+      class="mt-6 mb-2 rounded border"
+      :src="qrcode"
+      alt="QR Code"
+    />
+  </div>
 </template>

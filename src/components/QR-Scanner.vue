@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mx-3 my-5">
     <qrcode-stream
       @detect="onDetect"
       @decode="onDecode"

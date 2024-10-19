@@ -1,8 +1,11 @@
 <template>
-  <div>
+  <div class="mx-3 my-5">
     <h1>NFC Scan</h1>
     <button @click="startScan">Start NFC Scan</button>
-    <div v-if="nfcData">
+    <hr />
+    <p class="px-2">{{ status }}</p>
+    <hr />
+    <div>
       <h2>Scanned NFC Data:</h2>
       <pre>{{ nfcData }}</pre>
     </div>
@@ -20,6 +23,7 @@
     setup() {
       const nfcData = ref(null);
       const error = ref(null);
+      const status = ref("Click start scan below");
 
       const startScan = async () => {
         error.value = null; // Reset error before starting a new scan
@@ -57,6 +61,7 @@
         nfcData,
         error,
         startScan,
+        status,
       };
     },
   };

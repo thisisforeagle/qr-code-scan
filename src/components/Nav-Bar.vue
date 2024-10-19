@@ -17,27 +17,24 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <router-link
-              class="nav-link btn"
-              activeClass="btn-primary"
-              linkExactActiveClass="btn-secondary"
+              class="btn"
+              activeClass="btn btn-secondary"
               to="/scanner"
               >Scan QR</router-link
             >
           </li>
           <li class="nav-item">
             <router-link
-              class="nav-link btn"
-              activeClass="btn-primary"
-              linkExactActiveClass="btn-secondary"
+              class="btn"
+              activeClass="btn btn-secondary"
               to="/generate"
               >Generate QR</router-link
             >
           </li>
           <li class="nav-item">
             <router-link
-              class="nav-link btn"
-              activeClass="btn-primary"
-              linkExactActiveClass="btn-secondary"
+              class="btn"
+              activeClass="btn btn-secondary"
               to="/nfc-scan"
               >Scan NFC</router-link
             >
@@ -55,15 +52,8 @@
 </script>
 
 <style scoped lang="scss">
-  .nav-link {
-    width: 150px;
-    margin-right: 10px;
-    border: 1px solid #007bff;
-    color: #007bff !important ;
-    &.router-link-exact-active {
-      font-weight: bold;
-      text-decoration: underline;
-      color: white !important;
-    }
+  .btn {
+    font-weight: lighter;
+    text-decoration: solid;
   }
 </style>

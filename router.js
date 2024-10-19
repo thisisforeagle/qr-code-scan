@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import BarcodeScanner from "@/components/Barcode-Scanner.vue"; // Adjust the path as necessary
+import QRScanner from "@/components/QR-Scanner.vue"; // Adjust the path as necessary
 import GenerateQRCode from "@/components/Generate-QR-Code.vue";
 import NFCScan from "@/components/NFC-Scan.vue";
 
@@ -7,7 +7,7 @@ const routes = [
   {
     path: "/scanner",
     name: "Scanner",
-    component: BarcodeScanner,
+    component: QRScanner,
   },
   {
     path: "/generate",
@@ -18,6 +18,11 @@ const routes = [
     path: "/nfc-scan",
     name: "NFCScan",
     component: NFCScan,
+  },
+  {
+    path: "/",
+    name: "Root",
+    redirect: "/scanner",
   },
 ];
 
