@@ -38,6 +38,7 @@
     if (content[0]?.rawValue) {
       decodedContent.value = content[0].rawValue;
       saveToSupabase(content[0].rawValue); // Save to Supabase
+      decodedContent.value = "saved to Supabase: " + content[0].rawValue;
     }
   }
 

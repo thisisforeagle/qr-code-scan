@@ -3,8 +3,9 @@
 import { createClient } from "@supabase/supabase-js";
 
 // Initialize Supabase client
-const SUPABASE_URL = process.env.SUPABASE_URL;
-const SUPABASE_PASSWORD = process.env.SUPABASE_PASSWORD;
+const SUPABASE_URL =
+  "postgresql://postgres.xrsrdfsvehmnodmovhcl:9N9fAu6h@Edy#Mm@aws-0-eu-west-1.pooler.supabase.com:6543/postgres";
+const SUPABASE_PASSWORD = "9N9fAu6h@Edy#Mm";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_PASSWORD);
 
