@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <nav>
-      <ul>
-        <li><router-link to="/scanner">Barcode Scanner</router-link></li>
-        <li><router-link to="/generate">Generate QR Code</router-link></li>
-        <li><router-link to="/nfc-scan">NFC Scan</router-link></li>
-      </ul>
-    </nav>
+    <NavBar />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+  import NavBar from "@/components/Nav-Bar.vue";
   export default {
-    name: "App",
+    components: {
+      NavBar,
+    },
   };
 </script>
 
@@ -36,5 +33,6 @@
 
   nav a.router-link-exact-active {
     font-weight: bold;
+    text-decoration: underline;
   }
 </style>

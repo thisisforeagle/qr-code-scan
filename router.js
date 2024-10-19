@@ -15,7 +15,7 @@ const routes = [
     component: GenerateQRCode,
   },
   {
-    path: "/nfc",
+    path: "/nfc-scan",
     name: "NFCScan",
     component: NFCScan,
   },
