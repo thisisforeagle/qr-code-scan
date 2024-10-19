@@ -13917,7 +13917,7 @@ class RealtimeClient {
       }
     });
     __vitePreload(async () => {
-      const { default: WS } = await import("./browser-C9glM0Cl.js").then((n) => n.b);
+      const { default: WS } = await import("./browser-C6UadX8i.js").then((n) => n.b);
       return { default: WS };
     }, true ? [] : void 0).then(({ default: WS }) => {
       this.conn = new WS(this._endPointURL(), void 0, {
@@ -18156,7 +18156,7 @@ class SupabaseClient {
 const createClient = (supabaseUrl, supabaseKey, options) => {
   return new SupabaseClient(supabaseUrl, supabaseKey, options);
 };
-const SUPABASE_URL = "postgresql://postgres.xrsrdfsvehmnodmovhcl:9N9fAu6h@Edy#Mm@aws-0-eu-west-1.pooler.supabase.com:6543/postgres";
+const SUPABASE_URL = "https://xrsrdfsvehmnodmovhcl.supabase.co";
 const SUPABASE_PASSWORD = "9N9fAu6h@Edy#Mm";
 const supabase = createClient(SUPABASE_URL, SUPABASE_PASSWORD);
 const insertData = async (table, newData) => {
@@ -18172,7 +18172,7 @@ const _sfc_main$1 = {
     const decodedContent = ref(null);
     async function saveToSupabase(content) {
       try {
-        await insertData("scanned_data", { content });
+        await insertData("scanned_data", content);
       } catch (error) {
         console.error("Error saving to Supabase:", error);
       }
@@ -18223,7 +18223,7 @@ const _sfc_main$1 = {
     };
   }
 };
-const BarcodeScanner = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-79cd1ccb"]]);
+const BarcodeScanner = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-0281c4c4"]]);
 const isClient = typeof window !== "undefined" && typeof document !== "undefined";
 typeof WorkerGlobalScope !== "undefined" && globalThis instanceof WorkerGlobalScope;
 const noop = () => {
