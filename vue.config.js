@@ -10,4 +10,5 @@ module.exports = defineConfig({
     },
     port: 8080, // You can change the port if needed
   },
+  publicPath: process.env.NODE_ENV === "production" ? "/qr-code-scan/" : "/",
 });
