@@ -1,4 +1,4 @@
-import { g as getDefaultExportFromCjs } from "./main-BQbLm5zY.js";
+import { g as getDefaultExportFromCjs } from "./main-9OL2pJ6o.js";
 var browser = function() {
   throw new Error(
     "ws does not work in the browser. Browser clients must use the native WebSocket object"
