@@ -3,13 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/integrations": "^11.1.0",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "qrcode": "^1.5.4",
+    "vue": "^3.2.13",
+    "vue-barcode-reader": "^1.0.3",
+    "vue-qrcode-reader": "^5.5.11",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
