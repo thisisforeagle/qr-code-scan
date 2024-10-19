@@ -17,3 +17,9 @@ nav a.router-link-exact-active {
 }
 
   /* Add any styles you need here */
+
+button[data-v-04ec4a45] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}

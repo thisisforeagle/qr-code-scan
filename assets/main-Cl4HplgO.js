@@ -6374,14 +6374,14 @@ const _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$2 = {
+const _sfc_main$3 = {
   name: "App"
 };
-const _hoisted_1$1 = { id: "app" };
-function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$2 = { id: "app" };
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_router_link = resolveComponent("router-link");
   const _component_router_view = resolveComponent("router-view");
-  return openBlock(), createElementBlock("div", _hoisted_1$1, [
+  return openBlock(), createElementBlock("div", _hoisted_1$2, [
     createBaseVNode("nav", null, [
       createBaseVNode("ul", null, [
         createBaseVNode("li", null, [
@@ -6413,7 +6413,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     createVNode(_component_router_view)
   ]);
 }
-const App = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render]]);
+const App = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$1]]);
 /*!
   * vue-router v4.0.13
   * (c) 2022 Eduardo San Martin Morote
@@ -13925,7 +13925,7 @@ class RealtimeClient {
       }
     });
     __vitePreload(async () => {
-      const { default: WS } = await import("./browser-rwCYkiVI.js").then((n) => n.b);
+      const { default: WS } = await import("./browser-BBUvI8CQ.js").then((n) => n.b);
       return { default: WS };
     }, true ? [] : void 0).then(({ default: WS }) => {
       this.conn = new WS(this._endPointURL(), void 0, {
@@ -18176,7 +18176,7 @@ const insertData = async (table, newData) => {
   }
   return data;
 };
-const _sfc_main$1 = {
+const _sfc_main$2 = {
   __name: "Barcode-Scanner",
   setup(__props) {
     const decodedContent = ref(null);
@@ -18233,7 +18233,7 @@ const _sfc_main$1 = {
     };
   }
 };
-const BarcodeScanner = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["__scopeId", "data-v-0281c4c4"]]);
+const BarcodeScanner = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-0281c4c4"]]);
 const isClient = typeof window !== "undefined" && typeof document !== "undefined";
 typeof WorkerGlobalScope !== "undefined" && globalThis instanceof WorkerGlobalScope;
 const noop = () => {
@@ -20206,8 +20206,8 @@ function useQRCode(text, options) {
   );
   return result;
 }
-const _hoisted_1 = ["src"];
-const _sfc_main = {
+const _hoisted_1$1 = ["src"];
+const _sfc_main$1 = {
   __name: "Generate-QR-Code",
   setup(__props) {
     const text = ref("https://vueuse.org");
@@ -20235,11 +20235,77 @@ const _sfc_main = {
           class: "mt-6 mb-2 rounded border",
           src: unref(qrcode2),
           alt: "QR Code"
-        }, null, 8, _hoisted_1)) : createCommentVNode("", true)
+        }, null, 8, _hoisted_1$1)) : createCommentVNode("", true)
       ], 64);
     };
   }
 };
+const _sfc_main = {
+  setup() {
+    const nfcData = ref(null);
+    const error = ref(null);
+    const startScan = async () => {
+      error.value = null;
+      if ("NDEFReader" in window) {
+        try {
+          const ndef = new NDEFReader();
+          await ndef.scan();
+          console.log("Scan started successfully.");
+          ndef.onreading = (event) => {
+            const decoder = new TextDecoder();
+            let data = "";
+            for (const record of event.message.records) {
+              data += `Record type: ${record.recordType}
+`;
+              data += `MIME type: ${record.mediaType}
+`;
+              data += `Record id: ${record.id}
+`;
+              data += `Record data: ${decoder.decode(record.data)}
+
+`;
+            }
+            nfcData.value = data;
+          };
+          ndef.onerror = (event) => {
+            error.value = `Error reading NFC tag: ${event.message}`;
+            console.log(`Error reading NFC tag: ${event.message}`);
+          };
+        } catch (err) {
+          error.value = `Error! Scan failed to start: ${err.message}`;
+          console.log(`Error! Scan failed to start: ${err.message}`);
+        }
+      } else {
+        error.value = "Web NFC is not supported in this browser.";
+        console.log("Web NFC is not supported in this browser.");
+      }
+    };
+    return {
+      nfcData,
+      error,
+      startScan
+    };
+  }
+};
+const _hoisted_1 = { key: 0 };
+const _hoisted_2 = { key: 1 };
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [
+    _cache[3] || (_cache[3] = createBaseVNode("h1", null, "NFC Scan", -1)),
+    createBaseVNode("button", {
+      onClick: _cache[0] || (_cache[0] = (...args) => $setup.startScan && $setup.startScan(...args))
+    }, "Start NFC Scan"),
+    $setup.nfcData ? (openBlock(), createElementBlock("div", _hoisted_1, [
+      _cache[1] || (_cache[1] = createBaseVNode("h2", null, "Scanned NFC Data:", -1)),
+      createBaseVNode("pre", null, toDisplayString($setup.nfcData), 1)
+    ])) : createCommentVNode("", true),
+    $setup.error ? (openBlock(), createElementBlock("div", _hoisted_2, [
+      _cache[2] || (_cache[2] = createBaseVNode("h2", null, "Error:", -1)),
+      createBaseVNode("pre", null, toDisplayString($setup.error), 1)
+    ])) : createCommentVNode("", true)
+  ]);
+}
+const NFCScan = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-04ec4a45"]]);
 const routes = [
   {
     path: "/scanner",
@@ -20249,7 +20315,7 @@ const routes = [
   {
     path: "/generate",
     name: "Generator",
-    component: _sfc_main
+    component: _sfc_main$1
   },
   {
     path: "/nfc",
