@@ -14,6 +14,7 @@ nav a {
 }
 nav a.router-link-exact-active {
     font-weight: bold;
+    text-decoration: underline;
 }
 
   /* Add any styles you need here */
