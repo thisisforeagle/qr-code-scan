@@ -15,11 +15,21 @@
 <script setup>
   import { ref } from "vue";
   import { QrcodeStream } from "vue-qrcode-reader";
+  import { insertData } from "@/services/supabaseService.js";
 
   const decodedContent = ref(null);
 
+  async function saveToSupabase(content) {
+    try {
+      await insertData("scanned_data", content);
+    } catch (error) {
+      console.error("Error saving to Supabase:", error);
+    }
+  }
+
   function onDecode(content) {
     decodedContent.value = content;
+    saveToSupabase(content); // Save to Supabase
   }
 
   function onDetect(content) {
@@ -27,6 +37,8 @@
     decodedContent.value = content;
     if (content[0]?.rawValue) {
       decodedContent.value = content[0].rawValue;
+      saveToSupabase(content[0].rawValue); // Save to Supabase
+      decodedContent.value = "saved to Supabase: " + content[0].rawValue;
     }
   }
 
