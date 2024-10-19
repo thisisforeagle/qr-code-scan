@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import BarcodeScanner from "@/components/Barcode-Scanner.vue"; // Adjust the path as necessary
 import GenerateQRCode from "@/components/Generate-QR-Code.vue";
 
@@ -13,10 +13,14 @@ const routes = [
     name: "Generator",
     component: GenerateQRCode,
   },
+  {
+    path: "/",
+    redirect: "/scanner",
+  },
 ];
 
 const router = createRouter({
-  history: createWebHistory("/qr-code-scan/"),
+  history: createWebHashHistory("/qr-code-scan/"),
   routes,
 });
 

@@ -17,6 +17,8 @@ export default defineConfig({
         main: path.resolve(__dirname, "index.html"),
       },
     },
+    cssMinify: false,
+    minify: false,
   },
   server: {
     https: {
@@ -25,5 +27,5 @@ export default defineConfig({
     },
     port: 8080, // You can change the port if needed
   },
-  base: process.env.NODE_ENV === "production" ? "/qr-code-scan/" : "/",
+  base: "/qr-code-scan/",
 });

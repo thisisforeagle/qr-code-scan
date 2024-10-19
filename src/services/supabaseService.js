@@ -3,9 +3,9 @@
 import { createClient } from "@supabase/supabase-js";
 
 // Initialize Supabase client
-const SUPABASE_URL =
-  "postgresql://postgres.xrsrdfsvehmnodmovhcl:9N9fAu6h@Edy#Mm@aws-0-eu-west-1.pooler.supabase.com:6543/postgres";
-const SUPABASE_PASSWORD = "9N9fAu6h@Edy#Mm";
+const SUPABASE_URL = "https://xrsrdfsvehmnodmovhcl.supabase.co";
+const SUPABASE_PASSWORD =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhyc3JkZnN2ZWhtbm9kbW92aGNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjkzNTY5NDYsImV4cCI6MjA0NDkzMjk0Nn0.LFwHRJyG1Qe08r9GBIE9nD90YE5Yai7fzlqiM5y-xpU";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_PASSWORD);
 
@@ -22,7 +22,9 @@ export const fetchData = async (table) => {
 
 // Function to insert data into a table
 export const insertData = async (table, newData) => {
-  const { data, error } = await supabase.from(table).insert(newData);
+  const { data, error } = await supabase.from(table).insert({
+    data: newData,
+  });
 
   if (error) {
     throw new Error(error.message);

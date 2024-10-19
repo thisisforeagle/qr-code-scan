@@ -21,7 +21,7 @@
 
   async function saveToSupabase(content) {
     try {
-      await insertData("scanned_data", { content });
+      await insertData("scanned_data", content);
     } catch (error) {
       console.error("Error saving to Supabase:", error);
     }
