@@ -6399,6 +6399,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             ])),
             _: 1
           })
+        ]),
+        createBaseVNode("li", null, [
+          createVNode(_component_router_link, { to: "/nfc-scan" }, {
+            default: withCtx(() => _cache[2] || (_cache[2] = [
+              createTextVNode("NFC Scan")
+            ])),
+            _: 1
+          })
         ])
       ])
     ]),
@@ -13917,7 +13925,7 @@ class RealtimeClient {
       }
     });
     __vitePreload(async () => {
-      const { default: WS } = await import("./browser-EZcqDAb2.js").then((n) => n.b);
+      const { default: WS } = await import("./browser-rwCYkiVI.js").then((n) => n.b);
       return { default: WS };
     }, true ? [] : void 0).then(({ default: WS }) => {
       this.conn = new WS(this._endPointURL(), void 0, {
@@ -20242,6 +20250,11 @@ const routes = [
     path: "/generate",
     name: "Generator",
     component: _sfc_main
+  },
+  {
+    path: "/nfc",
+    name: "NFCScan",
+    component: NFCScan
   },
   {
     path: "/",
