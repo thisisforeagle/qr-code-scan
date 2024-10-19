@@ -13925,7 +13925,7 @@ class RealtimeClient {
       }
     });
     __vitePreload(async () => {
-      const { default: WS } = await import("./browser-CsSiolUz.js").then((n) => n.b);
+      const { default: WS } = await import("./browser-Dz7RO1_J.js").then((n) => n.b);
       return { default: WS };
     }, true ? [] : void 0).then(({ default: WS }) => {
       this.conn = new WS(this._endPointURL(), void 0, {
@@ -20318,7 +20318,7 @@ const routes = [
     component: _sfc_main$1
   },
   {
-    path: "/nfc",
+    path: "/nfc-scan",
     name: "NFCScan",
     component: NFCScan
   }
